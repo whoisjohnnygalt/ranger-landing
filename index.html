@@ -1,0 +1,868 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="description" content="The BEX RANGER. Polarized, Universatility® OTG sunglasses built for cowboys, ranchers, and barrel racers. $179. Free shipping over $75." />
+<title>The RANGER Sunglasses — Built for the West | BEX</title>
+<link rel="preconnect" href="https://api.fontshare.com" />
+<link href="https://api.fontshare.com/v2/css?f[]=cabinet-grotesk@800,700,500,400&f[]=general-sans@600,500,400&display=swap" rel="stylesheet">
+<style>
+  /* ---------- TOKENS ---------- */
+  :root {
+    --forest: #20372e;
+    --forest-deep: #15241d;
+    --harvest: #d15334;
+    --harvest-hover: #b8421f;
+    --slate: #c6c7bb;
+    --cream: #f9f8f5;
+    --ink: #0d1411;
+    --shadow-lg: 0 30px 80px rgba(0,0,0,.45);
+    --max: 1200px;
+    --ease: cubic-bezier(.2,.7,.2,1);
+  }
+
+  *, *::before, *::after { box-sizing: border-box; }
+  html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+  body {
+    margin: 0;
+    font-family: "General Sans", system-ui, -apple-system, sans-serif;
+    background: var(--cream);
+    color: var(--ink);
+    line-height: 1.55;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+  img { max-width: 100%; display: block; }
+  a { color: inherit; text-decoration: none; }
+
+  h1, h2, h3 {
+    font-family: "Cabinet Grotesk", system-ui, sans-serif;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    line-height: 1.02;
+    margin: 0;
+  }
+
+  .container { max-width: var(--max); margin: 0 auto; padding: 0 24px; }
+
+  /* ---------- BUTTONS ---------- */
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 20px 36px;
+    background: var(--harvest);
+    color: #fff;
+    font-family: "Cabinet Grotesk", sans-serif;
+    font-weight: 700;
+    font-size: 17px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    box-shadow: 0 14px 30px rgba(209,83,52,.35), inset 0 -3px 0 rgba(0,0,0,.18);
+    transition: transform .25s var(--ease), background .25s var(--ease), box-shadow .25s var(--ease);
+    will-change: transform;
+  }
+  .btn:hover { background: var(--harvest-hover); transform: translateY(-2px); box-shadow: 0 18px 40px rgba(209,83,52,.45), inset 0 -3px 0 rgba(0,0,0,.18); }
+  .btn:active { transform: translateY(0); }
+  .btn .arrow { transition: transform .25s var(--ease); }
+  .btn:hover .arrow { transform: translateX(4px); }
+
+  .btn-large {
+    padding: 24px 48px;
+    font-size: 19px;
+  }
+  @media (max-width: 480px) {
+    .btn { width: 100%; padding: 18px 24px; font-size: 15px; }
+    .btn-large { padding: 20px 24px; font-size: 16px; }
+  }
+
+  /* ---------- TOP BAR (logo only) ---------- */
+  .topbar {
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    padding: 24px;
+    z-index: 10;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .logo {
+    font-family: "Cabinet Grotesk", sans-serif;
+    font-weight: 800;
+    font-size: 28px;
+    letter-spacing: 0.18em;
+    color: #fff;
+  }
+  .logo .dot { color: var(--harvest); }
+  .topbar-meta {
+    color: rgba(255,255,255,.75);
+    font-size: 12px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+  }
+  @media (max-width: 600px) {
+    .topbar-meta { display: none; }
+  }
+
+  /* ---------- HERO ---------- */
+  .hero {
+    position: relative;
+    min-height: 100svh;
+    color: #fff;
+    overflow: hidden;
+    display: flex;
+    align-items: flex-end;
+    isolation: isolate;
+  }
+  .hero-bg {
+    position: absolute; inset: 0;
+    background: url('images/hero.png') center/cover no-repeat;
+    z-index: -2;
+    transform: scale(1.05);
+    animation: slowZoom 18s var(--ease) forwards;
+  }
+  @keyframes slowZoom { to { transform: scale(1); } }
+  .hero::after {
+    content: "";
+    position: absolute; inset: 0;
+    background:
+      linear-gradient(180deg, rgba(13,20,17,.55) 0%, rgba(13,20,17,.35) 35%, rgba(13,20,17,.85) 100%);
+    z-index: -1;
+  }
+  .hero-content {
+    width: 100%;
+    padding: 80px 24px 100px;
+    max-width: var(--max);
+    margin: 0 auto;
+  }
+  @media (max-width: 600px) {
+    .hero-content { padding: 100px 20px 110px; }
+  }
+  .eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--cream);
+    margin-bottom: 24px;
+    opacity: .9;
+  }
+  .eyebrow::before {
+    content: "";
+    display: inline-block;
+    width: 36px;
+    height: 1.5px;
+    background: var(--harvest);
+  }
+  .hero h1 {
+    font-size: clamp(56px, 11vw, 148px);
+    color: #fff;
+    margin-bottom: 20px;
+    text-shadow: 0 2px 30px rgba(0,0,0,.4);
+  }
+  .hero h1 em {
+    font-style: normal;
+    color: var(--harvest);
+  }
+  .hero-sub {
+    font-size: clamp(17px, 2vw, 22px);
+    color: var(--cream);
+    max-width: 560px;
+    margin-bottom: 40px;
+    opacity: .92;
+    font-weight: 400;
+  }
+  .hero-cta-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px 22px;
+    align-items: center;
+  }
+  .hero-meta {
+    color: rgba(255,255,255,.85);
+    font-size: 13px;
+    letter-spacing: 0.06em;
+  }
+  .hero-meta strong { color: #fff; }
+  @media (max-width: 600px) {
+    .hero-meta { display: none; }
+    .hero-cta-row { flex-direction: column; align-items: stretch; }
+  }
+
+  .hero-badge {
+    position: absolute;
+    bottom: 24px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 18px;
+    align-items: center;
+    font-size: 12px;
+    color: rgba(255,255,255,.75);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    z-index: 2;
+    white-space: nowrap;
+  }
+  .hero-badge .stars { color: #f0c758; letter-spacing: 2px; }
+  @media (max-width: 700px) {
+    .hero-badge { font-size: 10.5px; gap: 10px; padding: 0 16px; flex-wrap: wrap; justify-content: center; bottom: 16px; }
+  }
+
+  /* ---------- TRUST BAR ---------- */
+  .trustbar {
+    background: var(--forest);
+    color: var(--cream);
+    padding: 22px 24px;
+    border-top: 1px solid rgba(255,255,255,.06);
+    border-bottom: 1px solid rgba(255,255,255,.06);
+  }
+  .trustbar-grid {
+    max-width: var(--max);
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+    text-align: center;
+    font-size: 13px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    font-weight: 500;
+  }
+  .trustbar-item { display: flex; align-items: center; justify-content: center; gap: 8px; }
+  .trustbar-item .stars { color: #f0c758; }
+  @media (max-width: 800px) {
+    .trustbar-grid { grid-template-columns: repeat(2, 1fr); gap: 12px 16px; font-size: 11.5px; }
+  }
+
+  /* ---------- SECTIONS ---------- */
+  section { position: relative; }
+  .section-pad { padding: clamp(72px, 10vw, 130px) 0; }
+
+  .section-eyebrow {
+    font-size: 12px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--harvest);
+    font-weight: 500;
+    margin-bottom: 16px;
+  }
+
+  /* ---------- PRODUCT SPOTLIGHT ---------- */
+  .product {
+    background: var(--cream);
+  }
+  .product-grid {
+    display: grid;
+    grid-template-columns: 1.05fr 1fr;
+    gap: clamp(40px, 6vw, 80px);
+    align-items: center;
+  }
+  .product-img-wrap {
+    position: relative;
+    border-radius: 4px;
+    overflow: hidden;
+    aspect-ratio: 1/1;
+    background: var(--ink);
+    box-shadow: var(--shadow-lg);
+  }
+  .product-img-wrap img { width: 100%; height: 100%; object-fit: cover; }
+  .product-img-wrap::after {
+    content: "RANGER";
+    position: absolute;
+    bottom: 24px; left: 24px;
+    font-family: "Cabinet Grotesk", sans-serif;
+    font-weight: 800;
+    font-size: 12px;
+    letter-spacing: 0.3em;
+    color: rgba(255,255,255,.6);
+  }
+
+  .product-info h2 {
+    font-size: clamp(40px, 5.5vw, 68px);
+    color: var(--ink);
+    margin-bottom: 8px;
+  }
+  .product-price {
+    display: flex;
+    align-items: baseline;
+    gap: 12px;
+    margin-bottom: 28px;
+    padding-bottom: 28px;
+    border-bottom: 1px solid rgba(13,20,17,.12);
+  }
+  .product-price .price {
+    font-family: "Cabinet Grotesk", sans-serif;
+    font-size: 36px;
+    font-weight: 800;
+    color: var(--forest);
+  }
+  .product-price .ship {
+    font-size: 13px;
+    color: rgba(13,20,17,.6);
+    letter-spacing: 0.06em;
+  }
+  .features {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 32px;
+  }
+  .features li {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    padding: 14px 0;
+    border-bottom: 1px solid rgba(13,20,17,.08);
+    font-size: 16px;
+    line-height: 1.45;
+  }
+  .features li:last-child { border-bottom: none; }
+  .features .check {
+    flex-shrink: 0;
+    width: 22px; height: 22px;
+    border-radius: 50%;
+    background: var(--forest);
+    color: #fff;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    margin-top: 2px;
+  }
+  .features li strong { font-weight: 600; }
+  .features li span { color: rgba(13,20,17,.65); }
+
+  @media (max-width: 800px) {
+    .product-grid { grid-template-columns: 1fr; }
+  }
+
+  /* ---------- UNIVERSATILITY ---------- */
+  .universatility {
+    background: var(--forest-deep);
+    color: var(--cream);
+    overflow: hidden;
+  }
+  .universatility::before {
+    content: "";
+    position: absolute; inset: 0;
+    background:
+      radial-gradient(ellipse at 20% 0%, rgba(209,83,52,.12), transparent 50%),
+      radial-gradient(ellipse at 80% 100%, rgba(32,55,46,.6), transparent 50%);
+    pointer-events: none;
+  }
+  .universatility-inner {
+    position: relative;
+    text-align: center;
+  }
+  .universatility h2 {
+    font-size: clamp(38px, 6vw, 80px);
+    color: #fff;
+    max-width: 900px;
+    margin: 0 auto 24px;
+  }
+  .universatility h2 em { font-style: normal; color: var(--harvest); }
+  .universatility-sub {
+    font-size: clamp(16px, 1.6vw, 19px);
+    color: rgba(249,248,245,.78);
+    max-width: 720px;
+    margin: 0 auto 64px;
+    line-height: 1.6;
+  }
+  .uni-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 32px;
+    margin-top: 64px;
+  }
+  .uni-col {
+    padding: 36px 24px;
+    border: 1px solid rgba(198,199,187,.12);
+    background: rgba(255,255,255,.02);
+    border-radius: 4px;
+    transition: transform .4s var(--ease), border-color .4s var(--ease), background .4s var(--ease);
+  }
+  .uni-col:hover { transform: translateY(-4px); border-color: rgba(209,83,52,.4); background: rgba(255,255,255,.04); }
+  .uni-icon {
+    width: 56px; height: 56px;
+    margin: 0 auto 20px;
+    color: var(--harvest);
+  }
+  .uni-icon svg { width: 100%; height: 100%; }
+  .uni-col h3 {
+    font-size: 22px;
+    color: #fff;
+    margin-bottom: 10px;
+  }
+  .uni-col p {
+    color: rgba(249,248,245,.7);
+    font-size: 14.5px;
+    margin: 0;
+    line-height: 1.6;
+  }
+  @media (max-width: 800px) {
+    .uni-grid { grid-template-columns: 1fr; gap: 16px; }
+  }
+
+  /* ---------- LIFESTYLE GRID ---------- */
+  .lifestyle { background: var(--cream); }
+  .lifestyle-head {
+    text-align: center;
+    margin-bottom: 60px;
+  }
+  .lifestyle-head h2 {
+    font-size: clamp(38px, 5.5vw, 72px);
+    color: var(--ink);
+  }
+  .lifestyle-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+  }
+  .lifestyle-card {
+    position: relative;
+    aspect-ratio: 4/5;
+    overflow: hidden;
+    border-radius: 4px;
+    background: var(--ink);
+  }
+  .lifestyle-card img {
+    width: 100%; height: 100%;
+    object-fit: cover;
+    transition: transform .8s var(--ease);
+  }
+  .lifestyle-card:hover img { transform: scale(1.04); }
+  .lifestyle-card::after {
+    content: "";
+    position: absolute; inset: 0;
+    background: linear-gradient(180deg, transparent 50%, rgba(13,20,17,.85) 100%);
+  }
+  .lifestyle-card .label {
+    position: absolute;
+    bottom: 24px; left: 24px;
+    z-index: 1;
+    color: #fff;
+    font-family: "Cabinet Grotesk", sans-serif;
+    font-weight: 700;
+    font-size: 18px;
+    letter-spacing: 0.04em;
+  }
+  .lifestyle-card .label small {
+    display: block;
+    font-family: "General Sans", sans-serif;
+    font-weight: 400;
+    font-size: 12px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--slate);
+    margin-bottom: 4px;
+  }
+  @media (max-width: 800px) {
+    .lifestyle-grid { grid-template-columns: 1fr; }
+    .lifestyle-card { aspect-ratio: 4/3; }
+  }
+
+  /* ---------- TESTIMONIALS ---------- */
+  .testimonials {
+    background: var(--forest);
+    color: var(--cream);
+  }
+  .testimonials-head {
+    text-align: center;
+    margin-bottom: 60px;
+  }
+  .testimonials-head h2 {
+    font-size: clamp(36px, 5vw, 64px);
+    color: #fff;
+  }
+  .test-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+  }
+  .test-card {
+    padding: 36px 28px;
+    background: rgba(255,255,255,.04);
+    border: 1px solid rgba(198,199,187,.1);
+    border-radius: 4px;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    transition: transform .35s var(--ease), border-color .35s var(--ease);
+  }
+  .test-card:hover { transform: translateY(-3px); border-color: rgba(209,83,52,.35); }
+  .test-stars { color: #f0c758; letter-spacing: 3px; font-size: 14px; }
+  .test-quote {
+    font-family: "Cabinet Grotesk", sans-serif;
+    font-weight: 500;
+    font-size: 19px;
+    line-height: 1.45;
+    color: #fff;
+    letter-spacing: -0.005em;
+  }
+  .test-author {
+    margin-top: auto;
+    padding-top: 18px;
+    border-top: 1px solid rgba(198,199,187,.12);
+    font-size: 13px;
+    color: var(--slate);
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+  .test-author strong { color: #fff; font-weight: 600; }
+  @media (max-width: 800px) {
+    .test-grid { grid-template-columns: 1fr; }
+  }
+
+  /* ---------- FINAL CTA ---------- */
+  .final {
+    background: var(--forest);
+    color: #fff;
+    text-align: center;
+    overflow: hidden;
+    position: relative;
+  }
+  .final::before {
+    content: "";
+    position: absolute; inset: 0;
+    background:
+      radial-gradient(ellipse at center, rgba(209,83,52,.18), transparent 60%);
+    pointer-events: none;
+  }
+  .final-inner { position: relative; }
+  .final h2 {
+    font-size: clamp(54px, 9vw, 140px);
+    color: #fff;
+    margin-bottom: 24px;
+    letter-spacing: -0.03em;
+  }
+  .final h2 em { font-style: normal; color: var(--harvest); }
+  .final p {
+    font-size: clamp(17px, 1.8vw, 21px);
+    color: var(--cream);
+    margin: 0 auto 40px;
+    max-width: 560px;
+    opacity: .9;
+  }
+  .final-meta {
+    margin-top: 24px;
+    font-size: 13px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: rgba(249,248,245,.65);
+  }
+
+  /* ---------- FOOTER ---------- */
+  footer {
+    background: var(--forest-deep);
+    color: var(--slate);
+    padding: 40px 24px;
+    border-top: 1px solid rgba(255,255,255,.05);
+  }
+  .footer-inner {
+    max-width: var(--max);
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 16px;
+    font-size: 13px;
+    letter-spacing: 0.04em;
+  }
+  .footer-links { display: flex; gap: 22px; }
+  .footer-links a:hover { color: #fff; }
+  .footer-copy { color: rgba(198,199,187,.55); }
+  @media (max-width: 600px) {
+    .footer-inner { flex-direction: column; text-align: center; }
+  }
+
+  /* ---------- STICKY MOBILE CTA ---------- */
+  .sticky-cta {
+    position: fixed;
+    left: 16px; right: 16px;
+    bottom: 16px;
+    z-index: 50;
+    display: none;
+    background: var(--harvest);
+    color: #fff;
+    padding: 16px 20px;
+    border-radius: 4px;
+    align-items: center;
+    justify-content: space-between;
+    font-family: "Cabinet Grotesk", sans-serif;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    font-size: 15px;
+    box-shadow: 0 18px 40px rgba(0,0,0,.45), inset 0 -3px 0 rgba(0,0,0,.18);
+    opacity: 0;
+    transform: translateY(120%);
+    transition: opacity .4s var(--ease), transform .4s var(--ease);
+  }
+  .sticky-cta.show { opacity: 1; transform: translateY(0); }
+  .sticky-cta .arrow { font-size: 18px; }
+  @media (max-width: 800px) {
+    .sticky-cta { display: flex; }
+    body { padding-bottom: 80px; }
+  }
+
+  /* ---------- SCROLL ANIMATIONS ---------- */
+  .js-on .reveal {
+    opacity: 0;
+    transform: translateY(28px);
+    transition: opacity .9s var(--ease), transform .9s var(--ease);
+    will-change: opacity, transform;
+  }
+  .js-on .reveal.in {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  .reveal.delay-1 { transition-delay: .1s; }
+  .reveal.delay-2 { transition-delay: .2s; }
+  .reveal.delay-3 { transition-delay: .3s; }
+
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after { animation-duration: 0.001ms !important; transition-duration: 0.001ms !important; }
+    .reveal { opacity: 1; transform: none; }
+  }
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg" aria-hidden="true"></div>
+  <header class="topbar">
+    <div class="logo">BEX<span class="dot">.</span></div>
+    <div class="topbar-meta">Authentic Western Eyewear</div>
+  </header>
+
+  <div class="hero-content">
+    <div class="eyebrow">The RANGER · Polarized OTG</div>
+    <h1>Built for<br />the <em>West.</em></h1>
+    <p class="hero-sub">The RANGER. Polarized performance meets ranch-proven toughness — engineered for cowboys, ranchers, and riders who don't take days off.</p>
+    <div class="hero-cta-row">
+      <a class="btn btn-large" href="https://bexsunglasses.com/products/ranger" target="_blank" rel="noopener">
+        Get the RANGER — $179
+        <span class="arrow">→</span>
+      </a>
+      <span class="hero-meta"><strong>Free shipping</strong> on orders $75+</span>
+    </div>
+  </div>
+
+  <div class="hero-badge">
+    <span class="stars">★★★★★</span>
+    <span>Free Shipping $75+</span>
+    <span>30-Day Returns</span>
+  </div>
+</section>
+
+<!-- TRUST BAR -->
+<div class="trustbar">
+  <div class="trustbar-grid">
+    <div class="trustbar-item"><span class="stars">★★★★★</span> 5-Star Rated</div>
+    <div class="trustbar-item">Worn by Working Cowboys</div>
+    <div class="trustbar-item">Free Shipping $75+</div>
+    <div class="trustbar-item">Built in the USA</div>
+  </div>
+</div>
+
+<!-- PRODUCT SPOTLIGHT -->
+<section class="product section-pad">
+  <div class="container">
+    <div class="product-grid">
+      <div class="product-img-wrap reveal">
+        <img src="images/product.png" alt="The BEX RANGER sunglasses — matte black polarized frame" />
+      </div>
+      <div class="product-info reveal delay-1">
+        <div class="section-eyebrow">The Flagship</div>
+        <h2>THE RANGER</h2>
+        <div class="product-price">
+          <span class="price">$179</span>
+          <span class="ship">Free shipping over $75</span>
+        </div>
+        <ul class="features">
+          <li><span class="check">✓</span><div><strong>Universatility® OTG System</strong><br><span>Patented integrated nose pad — fits over prescription glasses.</span></div></li>
+          <li><span class="check">✓</span><div><strong>Polarized, Scratch-Resistant Lenses</strong><br><span>Cuts glare from the dash, the dust, and the arena lights.</span></div></li>
+          <li><span class="check">✓</span><div><strong>Lightweight TR90 Frame</strong><br><span>Ranch-tough construction. Bends before it breaks.</span></div></li>
+          <li><span class="check">✓</span><div><strong>All-Day Comfort</strong><br><span>Built to disappear on your face — sunup to sundown.</span></div></li>
+        </ul>
+        <a class="btn" href="https://bexsunglasses.com/products/ranger" target="_blank" rel="noopener">
+          Add to Cart — $179 <span class="arrow">→</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- UNIVERSATILITY -->
+<section class="universatility section-pad">
+  <div class="container universatility-inner">
+    <div class="section-eyebrow reveal">Patented Technology</div>
+    <h2 class="reveal delay-1">The Nose Pad That <em>Changes Everything</em>.</h2>
+    <p class="universatility-sub reveal delay-2">Our Universatility® system is the only integrated, adjustable nose pad built for riders who wear prescription glasses. No clip-ons. No fumbling. Just put them on and go.</p>
+
+    <div class="uni-grid">
+      <div class="uni-col reveal">
+        <div class="uni-icon">
+          <svg viewBox="0 0 56 56" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+            <ellipse cx="17" cy="32" rx="10" ry="8"/>
+            <ellipse cx="39" cy="32" rx="10" ry="8"/>
+            <path d="M27 32 q1.5 -3 2 -3 q.5 0 2 3"/>
+            <path d="M10 26 q-3 -1 -5 1"/>
+            <path d="M46 26 q3 -1 5 1"/>
+            <path d="M14 19 l6 4 M42 19 l-6 4" opacity=".5"/>
+          </svg>
+        </div>
+        <h3>Fits Over Rx Glasses</h3>
+        <p>Wear them right over your prescription frames. No swap-outs, no compromise.</p>
+      </div>
+
+      <div class="uni-col reveal delay-1">
+        <div class="uni-icon">
+          <svg viewBox="0 0 56 56" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M28 8 v40"/>
+            <path d="M16 18 h24"/>
+            <path d="M16 38 h24"/>
+            <circle cx="28" cy="18" r="3"/>
+            <circle cx="28" cy="38" r="3"/>
+            <path d="M10 28 h36" opacity=".4"/>
+          </svg>
+        </div>
+        <h3>Adjustable Fit</h3>
+        <p>Dial in your perfect angle. Custom comfort across face shapes and hat sizes.</p>
+      </div>
+
+      <div class="uni-col reveal delay-2">
+        <div class="uni-icon">
+          <svg viewBox="0 0 56 56" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M28 6 l16 8 v14 c0 12 -7 19 -16 22 c-9 -3 -16 -10 -16 -22 v-14 z"/>
+            <path d="M21 28 l5 5 l10 -10"/>
+          </svg>
+        </div>
+        <h3>No Slipping On The Job</h3>
+        <p>Locked in through fence work, barrel runs, and 14-hour days in the saddle.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- LIFESTYLE -->
+<section class="lifestyle section-pad">
+  <div class="container">
+    <div class="lifestyle-head">
+      <div class="section-eyebrow reveal">Real Riders, Real Work</div>
+      <h2 class="reveal delay-1">Made for Where You Work</h2>
+    </div>
+    <div class="lifestyle-grid">
+      <div class="lifestyle-card reveal">
+        <img src="images/lifestyle1.png" alt="Cowboy on fence post at sunrise wearing BEX sunglasses" loading="lazy" />
+        <div class="label"><small>Sunrise · West Texas</small>The Ranch Hand</div>
+      </div>
+      <div class="lifestyle-card reveal delay-1">
+        <img src="images/lifestyle2.png" alt="Woman barrel racer mid-turn on horseback in the arena" loading="lazy" />
+        <div class="label"><small>The Arena</small>The Barrel Racer</div>
+      </div>
+      <div class="lifestyle-card reveal delay-2">
+        <img src="images/lifestyle3.png" alt="Rancher checking cattle on open range" loading="lazy" />
+        <div class="label"><small>Open Range</small>The Rancher</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="testimonials section-pad">
+  <div class="container">
+    <div class="testimonials-head">
+      <div class="section-eyebrow reveal" style="color: var(--harvest);">Field Tested</div>
+      <h2 class="reveal delay-1">Worn Hard. Loved Harder.</h2>
+    </div>
+    <div class="test-grid">
+      <div class="test-card reveal">
+        <div class="test-stars">★★★★★</div>
+        <p class="test-quote">"These stay on all day moving cattle. I've tried everything else. Nothing compares."</p>
+        <div class="test-author"><strong>Travis K.</strong> · Amarillo, TX</div>
+      </div>
+      <div class="test-card reveal delay-1">
+        <div class="test-stars">★★★★★</div>
+        <p class="test-quote">"Finally a pair that fits over my prescription. Run barrels in these every weekend."</p>
+        <div class="test-author"><strong>Shelby M.</strong> · Weatherford, TX</div>
+      </div>
+      <div class="test-card reveal delay-2">
+        <div class="test-stars">★★★★★</div>
+        <p class="test-quote">"Tough as the work I do. Worth every penny."</p>
+        <div class="test-author"><strong>Cole R.</strong> · Casper, WY</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<section class="final section-pad">
+  <div class="container final-inner">
+    <h2 class="reveal">Ready to <em>Ride?</em></h2>
+    <p class="reveal delay-1">The RANGER. $179. Free shipping over $75.</p>
+    <div class="reveal delay-2">
+      <a class="btn btn-large" href="https://bexsunglasses.com/products/ranger" target="_blank" rel="noopener">
+        Get Your RANGER Now <span class="arrow">→</span>
+      </a>
+    </div>
+    <div class="final-meta reveal delay-3">30-Day Returns · No Questions Asked</div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="logo" style="font-size: 22px; color: #fff;">BEX<span class="dot">.</span></div>
+    <div class="footer-links">
+      <a href="https://bexsunglasses.com" target="_blank" rel="noopener">bexsunglasses.com</a>
+      <a href="https://bexsunglasses.com/policies/privacy-policy" target="_blank" rel="noopener">Privacy</a>
+      <a href="https://bexsunglasses.com/policies/refund-policy" target="_blank" rel="noopener">Returns</a>
+    </div>
+    <div class="footer-copy">© 2026 BEX Sunglasses. All rights reserved.</div>
+  </div>
+</footer>
+
+<!-- STICKY MOBILE CTA -->
+<a href="https://bexsunglasses.com/products/ranger" target="_blank" rel="noopener" class="sticky-cta" id="stickyCta">
+  <span>Get the RANGER — $179</span>
+  <span class="arrow">→</span>
+</a>
+
+<script>
+  document.documentElement.classList.add('js-on');
+  // Reveal on scroll
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach((e) => {
+      if (e.isIntersecting) {
+        e.target.classList.add('in');
+        io.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+  document.querySelectorAll('.reveal').forEach((el) => io.observe(el));
+
+  // Sticky mobile CTA — show after scrolling past hero
+  const sticky = document.getElementById('stickyCta');
+  const hero = document.querySelector('.hero');
+  const stickyObs = new IntersectionObserver((entries) => {
+    entries.forEach((e) => {
+      if (e.isIntersecting) sticky.classList.remove('show');
+      else sticky.classList.add('show');
+    });
+  }, { threshold: 0.15 });
+  stickyObs.observe(hero);
+</script>
+
+</body>
+</html>

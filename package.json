@@ -1,0 +1,11 @@
+{
+  "name": "ranger-landing",
+  "version": "1.0.0",
+  "description": "BEX RANGER product landing page",
+  "scripts": {
+    "start": "serve . -p ${PORT:-3000} -s"
+  },
+  "dependencies": {
+    "serve": "^14.2.0"
+  }
+}
